@@ -1,0 +1,206 @@
+.ex-1-square {
+  transition: background-color 3s;
+}
+
+.ex-2-square {
+  transition: width 3s;
+}
+
+.ex-3-square {
+  transition: border-radius 3s;
+}
+
+.ex-4-square {
+  transition: opacity 1s;
+}
+.ex-5-square {
+  /* transition: height 2s; 
+    transition: width 2s; */
+  transition: scale 2s;
+}
+
+.ex-6-img {
+  transition: filter 0s;
+}
+
+.ex-7-img {
+  transition: filter 3s;
+}
+
+.ex-8-img {
+  transition: all 0s;
+}
+
+.ex-9-img {
+  transition: all;
+}
+
+.ex-10-icon {
+  animation: rotate 3s;
+  animation-delay: 2s;
+}
+.ex-11-icon:hover {
+  animation: rotate-2 3s;
+}
+.ex-12-button:hover .ex-12-top-white {
+  animation: moveTop 2s;
+}
+
+.ex-12-button:hover .ex-12-bottom-white {
+  animation: moveBot 2s;
+}
+
+.ex-13-button:hover .ex-13-bottom-white {
+    animation: move-all-bot 2s linear;
+}
+
+.ex-13-button:hover .ex-13-top-white {
+    animation: move-all-top 2s linear;
+}
+
+/* transition/animation */
+
+.ex-1-square:hover {
+  background-color: red;
+}
+
+.ex-2-square:active {
+  width: 100%;
+}
+
+.ex-3-square:hover {
+  border-radius: 50%;
+}
+
+.ex-4-square:hover {
+  opacity: 0;
+}
+
+/* l'hover va messo prima dell'active altrimenti funziona solo l'hover!! */
+.ex-5-square:hover {
+  /* width: 80px;
+    height: 80px; */
+  transform: scale(1.6);
+}
+
+.ex-5-square:active {
+  /* width: 30px;
+    height: 30px; */
+  transform: scale(0.5);
+}
+
+.ex-6-img:hover {
+  filter: grayscale(1);
+}
+
+.ex-7-img:hover {
+  /* filter: contrast(0.6) blur(0.6); */
+  filter: grayscale(0.6) sepia(0.5);
+}
+
+.ex-8-img:hover {
+  filter: grayscale(0.6) sepia(2);
+  border-radius: 50%;
+}
+
+.ex-9-img:hover {
+  transform: scale(0.5);
+  filter: grayscale(1) sepia(1);
+  border-radius: 50%;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes rotate-2 {
+  0% {
+    transform: rotate(0);
+  }
+  80% {
+    transform: rotate(5rad);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+@keyframes moveTop {
+  0% {
+    left: 20%;
+  }
+  50% {
+    left: 70%
+  }
+  100% {
+    left: 20%;
+  }
+}
+
+@keyframes moveBot {
+  0% {
+    right: 20%;
+  }
+  50% {
+    right: 70%
+  }
+  100% {
+    right: 20%;
+  }
+}
+
+@keyframes move-all-top {
+    0% {
+        left: 10%;
+        top: -10px;
+    }
+    30% {
+        left: calc(100% - 30px);
+        top: -10px;
+    }
+    45% {
+        left: calc(100% - 30px);
+        top: 100%;
+    }
+    75% {
+        left: 0;
+        top: 100%;
+    }
+    90% {
+        left: -15px;
+        top: -10px;
+    }
+    100% {
+        left: 10%;
+        top: -10px;
+    }
+}
+
+@keyframes move-all-bot {
+    0% {
+        bottom: -10px;
+        right: 20%;
+    }
+    30% {
+        right: calc(100% - 30px);
+        bottom: -10px;
+    }
+    45% {
+        right: calc(100% - 30px);
+        bottom: 100%;
+    }
+    75% {
+        right: 0;
+        bottom: 100%;
+    }
+    90% {
+        right: -15px;
+        bottom: -10px;
+    }
+    100% {
+        bottom: -10px;
+        right: 20%;
+    }
+}
